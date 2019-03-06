@@ -28,3 +28,7 @@ target_compile_options(ARC PRIVATE -fobjc-arc)
 add_executable(enum Enum.m)
 target_link_libraries(enum PRIVATE ${FOUNDATION})
 target_compile_options(enum PRIVATE -fobjc-arc)
+
+add_executable(protocol Drawing.h Drawing.m)
+target_link_libraries(protocol PRIVATE ${FOUNDATION})
+target_compile_options(protocol PRIVATE -fobjc-arc)
