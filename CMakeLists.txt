@@ -18,17 +18,26 @@ target_link_libraries(Inheritance PRIVATE ${FOUNDATION})
 add_executable(Exception ExceptionHandling.m)
 target_link_libraries(Exception PRIVATE ${FOUNDATION})
 
-add_executable(String String.m)
-target_link_libraries(String PRIVATE ${FOUNDATION})
-
 add_executable(ARC ARC.m)
 target_link_libraries(ARC PRIVATE ${FOUNDATION})
 target_compile_options(ARC PRIVATE -fobjc-arc)
 
-add_executable(enum Enum.m)
+add_executable(enum enum/Enum.m)
 target_link_libraries(enum PRIVATE ${FOUNDATION})
 target_compile_options(enum PRIVATE -fobjc-arc)
 
 add_executable(protocol Drawing.h Drawing.m)
 target_link_libraries(protocol PRIVATE ${FOUNDATION})
 target_compile_options(protocol PRIVATE -fobjc-arc)
+
+add_executable(literal literal/main.m)
+target_link_libraries(literal PRIVATE ${FOUNDATION})
+target_compile_options(literal PRIVATE -fobjc-arc)
+
+add_executable(const const/main.m const/EOCLoginManager.h const/EOCLoginManager.m)
+target_link_libraries(const PRIVATE ${FOUNDATION})
+target_compile_options(const PRIVATE -fobjc-arc)
+
+if(${APPLE})
+find_library(AppKit AppKit)
+endif()

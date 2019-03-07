@@ -2,8 +2,8 @@
 
 int main(int argc,char const *argv[]){
   @autoreleasepool {
-    NSString *str1 = @"This is string A";
-    NSString *str2 = @"This is string B";
+    NSString *str1 = @"This is literal A";
+    NSString *str2 = @"This is literal B";
 
     NSString *res;
     NSComparisonResult compareResult;
@@ -21,7 +21,7 @@ int main(int argc,char const *argv[]){
     else
       NSLog(@"str1 != res");
 
-    NSRange subRange = [str1 rangeOfString: @"string A"];
+    NSRange subRange = [str1 rangeOfString: @"literal A"];
     NSLog(@"String is at index %lu, length is %lu",
       subRange.location,subRange.length);
   }
